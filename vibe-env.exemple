@@ -1,0 +1,8 @@
+# Clés pour Mistral Vibe. Ce fichier va dans ~/.vibe/.env (JAMAIS dans un dépôt Git).
+# Remplis seulement la ligne qui te concerne, sans guillemets ni espaces.
+
+# Accès par l'API Mistral (console.mistral.ai) :
+MISTRAL_API_KEY=
+
+# Accès par le serveur de l'entreprise (si il demande une clé) :
+ENTREPRISE_API_KEY=

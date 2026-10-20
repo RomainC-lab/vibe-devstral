@@ -1,0 +1,5 @@
+# Clés et réglages personnels : jamais dans le dépôt
+.env
+*.env
+!vibe-env.exemple
+sauvegarde-*/
