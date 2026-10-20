@@ -10,6 +10,11 @@
 - Garde le style du fichier (nommage, indentation, commentaires).
 - S'il manque une information ou s'il y a deux choix raisonnables : pose la question au lieu de choisir au hasard.
 
+## Mémoire
+- Tu ne te souviens de rien d'une session à l'autre : seuls les fichiers `AGENTS.md` sont relus.
+- Si le projet n'a pas d'`AGENTS.md`, propose de le créer avec la skill `creer-agents-md`.
+- Quand je te corrige sur une chose qui reviendra (commande, règle, piège), ou que je dis « retiens », note-la avec la skill `retenir`.
+
 ## Avant de dire « c'est fait »
 - Lance les tests du projet (ou la commande indiquée dans l'`AGENTS.md` du projet) et donne le résultat réel.
 - Si tu n'as pas pu tester, dis-le clairement et explique comment je peux le faire.

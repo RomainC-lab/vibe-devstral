@@ -56,6 +56,8 @@ Tape `/` dans Vibe pour les voir :
 - `/relire-diff` : relit tes changements en cours (`git diff`) et liste les problèmes, du plus grave au moins grave.
 - `/ecrire-tests` : écrit des tests au style du projet et les lance.
 - `/preparer-commit` : vérifie le diff (secrets, fichiers en trop, tests) et propose le message de commit. Ne commite qu'avec ton accord, ne pousse jamais.
+- `/creer-agents-md` : explore le projet et écrit son `AGENTS.md` (commandes, dossiers, règles). Relis-le ensuite.
+- `/retenir <la chose>` : note une consigne ou un piège dans l'`AGENTS.md` pour qu'il s'en souvienne aux prochaines sessions. Il le fait aussi tout seul quand tu le corriges.
 
 Vibe peut aussi lancer tout seul `planifier`, `relire-diff` et `ecrire-tests` quand ça colle à ta demande.
 
@@ -63,7 +65,7 @@ Vibe peut aussi lancer tout seul `planifier`, `relire-diff` et `ecrire-tests` qu
 
 ## Pour chaque projet
 
-Copie `modeles/AGENTS.md` à la racine du projet sous le nom `AGENTS.md` et remplis-le (commandes de test, dossiers, règles). Vibe le lit à chaque session : c'est ce qui l'aide le plus.
+Lance `/creer-agents-md` dans le projet, ou copie `modeles/AGENTS.md` à la racine sous le nom `AGENTS.md` et remplis-le (commandes de test, dossiers, règles). Vibe le lit à chaque session : c'est ce qui l'aide le plus.
 
 ## Astuces
 
@@ -80,7 +82,7 @@ Copie `modeles/AGENTS.md` à la racine du projet sous le nom `AGENTS.md` et remp
 ```
 vibe/config.toml               réglages (modèle, fournisseurs, permissions)
 vibe/AGENTS.md                 consignes pour tous les projets
-vibe/skills/*/SKILL.md         les 4 commandes ci-dessus
+vibe/skills/*/SKILL.md         les 6 commandes ci-dessus
 vibe/agents/relecteur.toml     le sous-agent relecteur
 modeles/AGENTS.md              modèle d'AGENTS.md pour un projet
 vibe-env.exemple               modèle du fichier des clés
