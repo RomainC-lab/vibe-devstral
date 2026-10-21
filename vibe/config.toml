@@ -3,9 +3,9 @@
 # Vérifié avec mistral-vibe 3.0.1. Clés API : JAMAIS ici, seulement dans ~/.vibe/.env.
 
 # Modèle utilisé au démarrage. Deux choix possibles (définis plus bas) :
+#   "devstral-entreprise"  -> serveur de l'entreprise compatible OpenAI (vLLM, etc.), choix par défaut
 #   "devstral"             -> API Mistral (clé MISTRAL_API_KEY)
-#   "devstral-entreprise"  -> serveur de l'entreprise compatible OpenAI (vLLM, etc.)
-active_model = "devstral"
+active_model = "devstral-entreprise"
 
 # Mode au démarrage : les modifications de fichiers passent seules,
 # les commandes shell demandent ton accord. Shift+Tab pour changer de mode.

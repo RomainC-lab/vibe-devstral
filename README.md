@@ -35,7 +35,7 @@ Le fichier `~/.vibe/config.toml` prévoit les deux :
   1. remplace `https://ADRESSE-DU-SERVEUR/v1` par la vraie adresse ;
   2. vérifie le nom du modèle (`name = ...`) : c'est celui que donne `<adresse>/v1/models` ;
   3. mets la clé dans `~/.vibe/.env` (`ENTREPRISE_API_KEY=...`), ou `api_key_env_var = ""` s'il n'y en a pas ;
-  4. mets `active_model = "devstral-entreprise"` (ou choisis-le avec `/model` dans Vibe).
+  4. `active_model = "devstral-entreprise"` est déjà le choix par défaut (pour l'API Mistral : `/model` puis `devstral`).
 
 Ne fais ces changements que dans `~/.vibe/config.toml`, jamais dans ce dépôt : pas d'adresse de serveur sur GitHub.
 Derrière un proxy d'entreprise, `enable_system_trust_store = true` (déjà mis) fait accepter les certificats installés dans Windows.
