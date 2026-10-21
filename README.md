@@ -38,7 +38,8 @@ Le fichier `~/.vibe/config.toml` prévoit les deux :
   4. `active_model = "devstral-entreprise"` est déjà le choix par défaut (pour l'API Mistral : `/model` puis `devstral`).
 
 Ne fais ces changements que dans `~/.vibe/config.toml`, jamais dans ce dépôt : pas d'adresse de serveur sur GitHub.
-Derrière un proxy d'entreprise, `enable_system_trust_store = true` (déjà mis) fait accepter les certificats installés dans Windows.
+`enable_system_trust_store` reste à `false` : à `true`, Vibe plante sur certains PC d'entreprise (« maximum recursion depth exceeded »).
+Si un jour tu as une erreur de certificat (`CERTIFICATE_VERIFY_FAILED`), demande le certificat de l'entreprise (fichier `.pem`) et indique son chemin dans la variable d'environnement `SSL_CERT_FILE`.
 
 ## Ce qui est réglé
 
