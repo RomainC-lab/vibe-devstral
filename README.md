@@ -61,6 +61,25 @@ Tape `/` dans Vibe pour les voir :
 
 Vibe peut aussi lancer tout seul `planifier`, `relire-diff` et `ecrire-tests` quand ça colle à ta demande.
 
+## La doc de tes outils (skills d'outils)
+
+Vibe n'a pas internet et le MCP est interdit au travail : ces skills lui donnent la doc de **tes versions**. Il les ouvre tout seul quand ta demande en parle (tu peux aussi taper `/netbox`, `/aap`…). Chacune a un `SKILL.md` court et des fichiers `references/` qu'il ne lit que si besoin.
+
+- `/netbox` : **NetBox 4.0.11** : API REST (filtres, pagination, brief/fields), pynetbox 7.4.1, scripts personnalisés, custom fields, GraphQL, plugins, ce qui a changé en 4.0 et ce qui n'existe pas encore.
+- `/aap` : **AAP 2.4** (ton « 4.5.24 » est la version de l'*automation controller*, livrée avec AAP 2.4) : job templates, surveys, credentials, inventaires, execution environments, API `/api/v2/`, collections `ansible.controller` / `awx.awx`, ce qui n'arrive qu'en AAP 2.5.
+- `/ansible` : **ansible-core 2.17** : FQCN, bonnes pratiques, pièges Jinja, ansible-lint, collection `netbox.netbox` (modules, `nb_lookup`, inventaire `nb_inventory`), ce qui a changé en 2.17 et ce qui vient après.
+- `/python-311` : **Python 3.11** : le code du travail doit tourner en 3.11 même si Vibe tourne en 3.12 sur ton PC ; liste de ce qui est interdit (3.12 et plus) avec le remplacement, et comment vérifier.
+
+Tout a été vérifié dans la doc officielle de chaque version, mais relis ce qui compte : une skill peut se tromper.
+
+### Écrire une nouvelle skill d'outil avec le modèle
+
+1. Copie `modeles/skill-outil/` dans `vibe/skills/<nom-de-l-outil>/` (minuscules, chiffres et tirets ; le même nom que la ligne `name:`).
+2. Remplis `SKILL.md` : la `description` (ce que c'est, la version, « À utiliser quand… » avec les mots que tu tapes), la version, les changements, l'usage courant, les pièges, ce qui n'existe **pas** dans ta version, et quand ouvrir chaque fichier de référence. Moins de ~150 lignes.
+3. Mets les longs détails dans `references/<sujet>.md` (un fichier par sujet, voir `references/exemple-sujet.md`) et cite-les dans `SKILL.md`.
+4. Rien de privé : pas de nom de serveur, d'adresse, d'identifiant ni de mot de passe.
+5. Installe (`bash installer.sh`, ou copie le dossier dans `~/.vibe/skills/`), relance `vibe` et tape `/<nom-de-l-outil>` pour l'essayer.
+
 **Sous-agent `relecteur`** : un relecteur en lecture seule, avec un contexte neuf. Demande par exemple : « fais relire mes changements par le relecteur ».
 
 ## Pour chaque projet
@@ -75,14 +94,16 @@ Lance `/creer-agents-md` dans le projet, ou copie `modeles/AGENTS.md` à la raci
 - **Relecture à froid** : après un gros changement, ouvre une nouvelle session (`/clear` ou relance `vibe`) et fais `/relire-diff` : un regard neuf trouve plus de problèmes.
 - **Longue session** : `/compact` résume la conversation à la main ; `vibe -c` reprend la dernière session.
 - **Ctrl+J** : nouvelle ligne dans ta demande ; **Échap** : interrompt Vibe.
-- Mise à jour de Vibe : `py -m pip install -U mistral-vibe`. Mise à jour de ces réglages : `git pull` puis `bash installer.sh --force`.
+- Mise à jour de Vibe : `py -m pip install -U mistral-vibe`. Mise à jour de ces réglages : `git pull` puis `bash installer.sh` (ajoute les nouveaux fichiers sans toucher aux tiens) ou `bash installer.sh --force` (remplace, avec sauvegarde).
 
 ## Contenu du dépôt
 
 ```
 vibe/config.toml               réglages (modèle, fournisseurs, permissions)
 vibe/AGENTS.md                 consignes pour tous les projets
-vibe/skills/*/SKILL.md         les 6 commandes ci-dessus
+vibe/skills/*/SKILL.md         les 6 commandes et les 4 skills d'outils ci-dessus
+vibe/skills/*/references/      la doc détaillée des skills d'outils
+modeles/skill-outil/           modèle pour écrire une nouvelle skill d'outil
 vibe/agents/relecteur.toml     le sous-agent relecteur
 modeles/AGENTS.md              modèle d'AGENTS.md pour un projet
 vibe-env.exemple               modèle du fichier des clés

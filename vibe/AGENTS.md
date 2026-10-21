@@ -28,3 +28,9 @@
 
 ## Environnement
 - Windows 11, Git Bash, Python 3.12. Écris des chemins et des scripts qui marchent sous Windows (attention aux `\` et aux fins de ligne).
+- Le code Python du travail vise **Python 3.11** (pas 3.12) : charge la skill `python-311`.
+
+## Outils du travail (pas d'internet ici)
+- Versions : NetBox 4.0.11, AAP 2.4 (automation controller 4.5.24), ansible-core 2.17, Python 3.11.
+- Avant d'écrire du code ou une commande pour l'un d'eux, charge sa skill (`netbox`, `aap`, `ansible`, `python-311`) et suis cette version.
+- Si la skill ne dit pas qu'une option ou une fonction existe dans cette version : dis-le et demande, n'invente pas.
