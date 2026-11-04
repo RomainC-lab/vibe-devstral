@@ -70,6 +70,7 @@ Vibe n'a pas internet et le MCP est interdit au travail : ces skills lui donnent
 - `/aap` : **AAP 2.4** (ton « 4.5.24 » est la version de l'*automation controller*, livrée avec AAP 2.4) : job templates, surveys, credentials, inventaires, execution environments, API `/api/v2/`, collections `ansible.controller` / `awx.awx`, ce qui n'arrive qu'en AAP 2.5.
 - `/ansible` : **ansible-core 2.17** : FQCN, bonnes pratiques, pièges Jinja, ansible-lint, collection `netbox.netbox` (modules, `nb_lookup`, inventaire `nb_inventory`), ce qui a changé en 2.17 et ce qui vient après.
 - `/python-311` : **Python 3.11** : le code du travail doit tourner en 3.11 même si Vibe tourne en 3.12 sur ton PC ; liste de ce qui est interdit (3.12 et plus) avec le remplacement, et comment vérifier.
+- `/monkeyble` : **Monkeyble 1.7.1** (tests de bout en bout de playbooks Ansible, essayé avec ansible-core 2.17 et Python 3.11) : installation (collection `hpe.monkeyble` + CLI pip), `monkeyble.cfg`, scénarios, `test_input` / `test_output`, mocks `monkeyble_module` pour ne jamais toucher NetBox, `should_fail` / `should_be_skipped` / `should_be_changed`, `monkeyble test`, exemple complet d'un rôle `netbox.netbox`, job GitLab CI, ce qui marche ou non avec AAP, pièges vérifiés.
 
 Tout a été vérifié dans la doc officielle de chaque version, mais relis ce qui compte : une skill peut se tromper.
 
@@ -102,7 +103,7 @@ Lance `/creer-agents-md` dans le projet, ou copie `modeles/AGENTS.md` à la raci
 ```
 vibe/config.toml               réglages (modèle, fournisseurs, permissions)
 vibe/AGENTS.md                 consignes pour tous les projets
-vibe/skills/*/SKILL.md         les 6 commandes et les 4 skills d'outils ci-dessus
+vibe/skills/*/SKILL.md         les 6 commandes et les 5 skills d'outils ci-dessus
 vibe/skills/*/references/      la doc détaillée des skills d'outils
 modeles/skill-outil/           modèle pour écrire une nouvelle skill d'outil
 vibe/agents/relecteur.toml     le sous-agent relecteur

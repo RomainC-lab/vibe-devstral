@@ -31,6 +31,6 @@
 - Le code Python du travail vise **Python 3.11** (pas 3.12) : charge la skill `python-311`.
 
 ## Outils du travail (pas d'internet ici)
-- Versions : NetBox 4.0.11, AAP 2.4 (automation controller 4.5.24), ansible-core 2.17, Python 3.11.
-- Avant d'écrire du code ou une commande pour l'un d'eux, charge sa skill (`netbox`, `aap`, `ansible`, `python-311`) et suis cette version.
+- Versions : NetBox 4.0.11, AAP 2.4 (automation controller 4.5.24), ansible-core 2.17, Python 3.11, Monkeyble 1.7.1 (tests de playbooks).
+- Avant d'écrire du code ou une commande pour l'un d'eux, charge sa skill (`netbox`, `aap`, `ansible`, `python-311`, `monkeyble`) et suis cette version.
 - Si la skill ne dit pas qu'une option ou une fonction existe dans cette version : dis-le et demande, n'invente pas.
